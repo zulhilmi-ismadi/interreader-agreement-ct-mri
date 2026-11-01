@@ -1,0 +1,4 @@
+dataset,task,reference_rater,best_model,best_score,runner_up,runner_up_score,margin,rater_pair_dispersion,margin_exceeds_dispersion,margin_sd,margin_over_sd
+curvas,pancreas,annotation_1,dints_pancreas,0.7918,dints_multi_organ,0.7435,0.0483,0.0364,True,0.01585,3.05
+curvas,pancreas,annotation_2,dints_pancreas,0.781,dints_multi_organ,0.737,0.0441,0.0364,True,0.01613,2.73
+curvas,pancreas,annotation_3,dints_pancreas,0.7745,dints_multi_organ,0.7318,0.0427,0.0364,True,0.01567,2.72

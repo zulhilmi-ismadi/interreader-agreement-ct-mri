@@ -1,0 +1,15 @@
+# The per-rater model experiment (per_rater_infer.py, per_rater_curvas.py, per_rater_models.py) runs in
+# its own environment, because PyTorch and MONAI are not needed for the agreement layer. Versions below are
+# the ones that produced the released per-rater scores, on Python 3.14 / Windows with CUDA 12.6.
+# Model weights are downloaded at the pinned revisions recorded in per_rater_scores/models.json and cached
+# in <project root>/.model-cache.
+-r requirements.txt
+torch==2.14.0
+torchvision==0.29.0
+monai==1.6.0
+transformers==5.17.0
+huggingface_hub==1.31.0
+safetensors==0.8.0
+segmentation_models_pytorch==0.5.0
+timm==1.0.29
+PyYAML==6.0.3

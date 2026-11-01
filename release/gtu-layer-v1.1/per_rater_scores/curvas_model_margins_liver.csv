@@ -1,0 +1,4 @@
+dataset,task,reference_rater,best_model,best_score,runner_up,runner_up_score,margin,rater_pair_dispersion,margin_exceeds_dispersion,margin_sd,margin_over_sd
+curvas,liver,annotation_1,swin_unetr_btcv,0.9498,dints_multi_organ,0.9402,0.0096,0.0123,False,0.00504,1.9
+curvas,liver,annotation_2,swin_unetr_btcv,0.9497,dints_multi_organ,0.94,0.0097,0.0123,False,0.00503,1.93
+curvas,liver,annotation_3,swin_unetr_btcv,0.9385,dints_multi_organ,0.9277,0.0108,0.0123,False,0.00496,2.18

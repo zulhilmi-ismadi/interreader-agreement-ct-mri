@@ -1,0 +1,4 @@
+task,rater_a,rater_b,kendall_tau,tau_lo,tau_hi,same_winner_rate
+liver,annotation_1,annotation_2,0.998,1.0,1.0,0.999
+liver,annotation_1,annotation_3,0.972,1.0,1.0,0.986
+liver,annotation_2,annotation_3,0.974,1.0,1.0,0.987

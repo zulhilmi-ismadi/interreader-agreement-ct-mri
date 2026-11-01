@@ -1,0 +1,17 @@
+case_set,organ,metric,n_cases,reader_agreement,reader_agreement_ci_low,reader_agreement_ci_high,best_model,best_model_score,best_model_ci_low,best_model_ci_high,difference,difference_ci_low,difference_ci_high,draws,seed
+all_90,pancreas,dice,90,0.9011,0.8802,0.9165,dints_pancreas,0.7824,0.7523,0.8102,-0.1186,-0.1511,-0.0896,2000,20260917
+all_90,pancreas,nsd@2,90,0.8965,0.8738,0.9156,dints_pancreas,0.7046,0.6731,0.7358,-0.1919,-0.2257,-0.1601,2000,20260917
+all_90,kidney,dice,90,0.9553,0.9414,0.965,swin_unetr_btcv,0.8472,0.8145,0.8747,-0.1081,-0.1427,-0.0789,2000,20260917
+all_90,kidney,nsd@2,90,0.9664,0.9531,0.9762,swin_unetr_btcv,0.7682,0.7356,0.7975,-0.1982,-0.2308,-0.1682,2000,20260917
+all_90,liver,dice,90,0.9738,0.9581,0.9821,swin_unetr_btcv,0.946,0.9358,0.9537,-0.0278,-0.0365,-0.018,2000,20260917
+all_90,liver,nsd@2,90,0.935,0.9144,0.9507,swin_unetr_btcv,0.7716,0.7509,0.7904,-0.1634,-0.1854,-0.1432,2000,20260917
+all_90,organ_average,dice,90,0.9434,0.9282,0.9533,best_model_per_organ,0.8586,0.8395,0.8747,-0.0848,-0.1045,-0.0662,2000,20260917
+all_90,organ_average,nsd@2,90,0.9326,0.9173,0.9443,best_model_per_organ,0.7481,0.7262,0.7674,-0.1845,-0.2072,-0.1629,2000,20260917
+testing_split_65,pancreas,dice,65,0.8981,0.8701,0.9194,dints_pancreas,0.7689,0.7245,0.805,-0.1293,-0.1738,-0.0923,2000,20260917
+testing_split_65,pancreas,nsd@2,65,0.8923,0.8622,0.9168,dints_pancreas,0.6926,0.6484,0.7315,-0.1997,-0.2452,-0.159,2000,20260917
+testing_split_65,kidney,dice,65,0.9538,0.9338,0.967,swin_unetr_btcv,0.8245,0.7827,0.8619,-0.1293,-0.1724,-0.0896,2000,20260917
+testing_split_65,kidney,nsd@2,65,0.9641,0.9447,0.9775,swin_unetr_btcv,0.7442,0.7027,0.7828,-0.2199,-0.2623,-0.1803,2000,20260917
+testing_split_65,liver,dice,65,0.9725,0.9511,0.984,swin_unetr_btcv,0.944,0.9296,0.9542,-0.0285,-0.0393,-0.0147,2000,20260917
+testing_split_65,liver,nsd@2,65,0.9364,0.9093,0.9568,swin_unetr_btcv,0.7649,0.7387,0.7891,-0.1715,-0.1995,-0.1442,2000,20260917
+testing_split_65,organ_average,dice,65,0.9415,0.9189,0.9551,best_model_per_organ,0.8458,0.8201,0.8674,-0.0957,-0.1225,-0.0718,2000,20260917
+testing_split_65,organ_average,nsd@2,65,0.9309,0.9086,0.9462,best_model_per_organ,0.7339,0.7054,0.7593,-0.197,-0.2279,-0.1691,2000,20260917

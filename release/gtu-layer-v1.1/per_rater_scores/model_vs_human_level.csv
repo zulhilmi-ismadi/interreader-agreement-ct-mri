@@ -1,0 +1,7 @@
+dataset,task,model,vs_staple,vs_majority,worst_individual,best_individual,pairwise_floor,rater_vs_staple,rater_vs_majority,reaches_rater_consensus_staple,reaches_pairwise_floor,beats_floor_against_every_rater
+riga,disc,medsam,0.3005,0.3018,0.2969,0.3072,0.9562,0.962,0.9654,False,False,False
+riga,disc,segformer_odoc,0.9325,0.9323,0.9138,0.9303,0.9562,0.962,0.9654,False,False,False
+riga,disc,unet_drishti,0.8722,0.8706,0.8541,0.8698,0.9562,0.962,0.9654,False,False,False
+riga,cup,medsam,0.2053,0.1891,0.1648,0.2189,0.8033,0.8284,0.839,False,False,False
+riga,cup,segformer_odoc,0.843,0.8614,0.7864,0.8564,0.8033,0.8284,0.839,True,True,False
+riga,cup,unet_drishti,0.7537,0.7235,0.6436,0.765,0.8033,0.8284,0.839,False,False,False

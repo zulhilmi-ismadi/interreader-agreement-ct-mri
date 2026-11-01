@@ -1,0 +1,7 @@
+task,reference_radiologist,full_sample_winner,n_cases,n_models,winner_changes,draws,rate,seed
+liver,annotation_1,swin_unetr_btcv,90,2,37,2000,0.0185,20260917
+liver,annotation_2,swin_unetr_btcv,90,2,35,2000,0.0175,20260917
+liver,annotation_3,swin_unetr_btcv,90,2,9,2000,0.0045,20260917
+pancreas,annotation_1,dints_pancreas,90,3,0,2000,0.0,20260917
+pancreas,annotation_2,dints_pancreas,90,3,0,2000,0.0,20260917
+pancreas,annotation_3,dints_pancreas,90,3,0,2000,0.0,20260917

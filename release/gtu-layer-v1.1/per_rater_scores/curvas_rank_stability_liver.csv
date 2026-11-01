@@ -1,0 +1,4 @@
+dataset,task,rater_a,rater_b,kendall_tau,same_winner
+curvas,liver,annotation_1,annotation_2,1.0,True
+curvas,liver,annotation_1,annotation_3,1.0,True
+curvas,liver,annotation_2,annotation_3,1.0,True

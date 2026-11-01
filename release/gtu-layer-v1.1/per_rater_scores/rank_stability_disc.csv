@@ -1,0 +1,16 @@
+dataset,task,rater_a,rater_b,kendall_tau,same_winner
+riga,disc,r1,r2,1.0,True
+riga,disc,r1,r3,1.0,True
+riga,disc,r1,r4,1.0,True
+riga,disc,r1,r5,1.0,True
+riga,disc,r1,r6,1.0,True
+riga,disc,r2,r3,1.0,True
+riga,disc,r2,r4,1.0,True
+riga,disc,r2,r5,1.0,True
+riga,disc,r2,r6,1.0,True
+riga,disc,r3,r4,1.0,True
+riga,disc,r3,r5,1.0,True
+riga,disc,r3,r6,1.0,True
+riga,disc,r4,r5,1.0,True
+riga,disc,r4,r6,1.0,True
+riga,disc,r5,r6,1.0,True

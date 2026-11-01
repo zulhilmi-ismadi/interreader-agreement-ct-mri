@@ -1,0 +1,4 @@
+task,rater_a,rater_b,kendall_tau,tau_lo,tau_hi,same_winner_rate
+pancreas,annotation_1,annotation_2,1.0,1.0,1.0,1.0
+pancreas,annotation_1,annotation_3,1.0,1.0,1.0,1.0
+pancreas,annotation_2,annotation_3,1.0,1.0,1.0,1.0

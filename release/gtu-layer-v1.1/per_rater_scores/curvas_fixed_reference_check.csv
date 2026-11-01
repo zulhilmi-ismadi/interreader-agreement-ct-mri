@@ -1,0 +1,13 @@
+organ,quantity,radiologists,share_of_resamples,analytic_reversal_probability,margin_m,sd_s,n_scans,matches_fixed_reference_control
+pancreas,two reference radiologists disagree on the first-ranked model,annotation_1 vs annotation_2,0.0,,,,90,
+pancreas,two reference radiologists disagree on the first-ranked model,annotation_1 vs annotation_3,0.0,,,,90,
+pancreas,two reference radiologists disagree on the first-ranked model,annotation_2 vs annotation_3,0.0,,,,90,
+pancreas,first-ranked model changes with the radiologist fixed,annotation_1,0.0,0.0010438795253056,0.0483177777777777,0.1489485927288509,90,True
+pancreas,first-ranked model changes with the radiologist fixed,annotation_2,0.0,0.0031193551415345,0.0440644444444444,0.1528473603812986,90,True
+pancreas,first-ranked model changes with the radiologist fixed,annotation_3,0.0,0.0030298715898382,0.0426988888888888,0.1475943350930534,90,True
+liver,two reference radiologists disagree on the first-ranked model,annotation_1 vs annotation_2,0.001,,,,90,
+liver,two reference radiologists disagree on the first-ranked model,annotation_1 vs annotation_3,0.014,,,,90,
+liver,two reference radiologists disagree on the first-ranked model,annotation_2 vs annotation_3,0.013,,,,90,
+liver,first-ranked model changes with the radiologist fixed,annotation_1,0.0185,0.0271004011552078,0.0095955555555555,0.0472834482076655,90,True
+liver,first-ranked model changes with the radiologist fixed,annotation_2,0.0175,0.0261076321808884,0.0096544444444444,0.0471784471862033,90,True
+liver,first-ranked model changes with the radiologist fixed,annotation_3,0.0045,0.0139874091336554,0.0107988888888888,0.0466169557194516,90,True

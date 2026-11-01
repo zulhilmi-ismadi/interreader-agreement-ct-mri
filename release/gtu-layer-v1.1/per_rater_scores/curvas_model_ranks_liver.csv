@@ -1,0 +1,7 @@
+dataset,task,reference_rater,model,mean_score,rank
+curvas,liver,annotation_1,swin_unetr_btcv,0.9498388888888888,1
+curvas,liver,annotation_1,dints_multi_organ,0.9402433333333332,2
+curvas,liver,annotation_2,swin_unetr_btcv,0.9496855555555556,1
+curvas,liver,annotation_2,dints_multi_organ,0.9400311111111112,2
+curvas,liver,annotation_3,swin_unetr_btcv,0.9384911111111112,1
+curvas,liver,annotation_3,dints_multi_organ,0.9276922222222224,2

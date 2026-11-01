@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this code or the derived tables, please cite the article."
+title: "Interreader agreement and scoring in public CT and MRI segmentation datasets: code and derived results"
+version: "1.1"
+license: MIT
+authors:
+  - family-names: Ismadi
+    given-names: Mohd-Zulhilmi
+    orcid: "https://orcid.org/0000-0002-7724-114X"
+  - family-names: Yamin
+    given-names: Fadillah
+    orcid: "https://orcid.org/0009-0009-9072-0864"
+  - family-names: Mohammed Sapardi
+    given-names: Mohd Azan
+    orcid: "https://orcid.org/0000-0001-5278-014X"
+  - family-names: Daoud
+    given-names: Jamal I.
+    orcid: "https://orcid.org/0000-0003-4124-8777"
+  - family-names: Abidin
+    given-names: Mohd Radhwan
+    orcid: "https://orcid.org/0009-0006-6724-4888"
+preferred-citation:
+  type: article
+  title: "Judging Segmentation AI against Radiologists: Interreader Agreement and Scoring in Public CT and MRI Datasets"
+  authors:
+    - family-names: Ismadi
+      given-names: Mohd-Zulhilmi
+    - family-names: Yamin
+      given-names: Fadillah
+    - family-names: Mohammed Sapardi
+      given-names: Mohd Azan
+    - family-names: Daoud
+      given-names: Jamal I.
+    - family-names: Abidin
+      given-names: Mohd Radhwan

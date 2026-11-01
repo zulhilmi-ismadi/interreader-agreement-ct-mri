@@ -1,0 +1,7 @@
+task,model,reference_rater,mean_score,ci_lo,ci_hi,images
+liver,dints_multi_organ,annotation_1,0.9402,0.9266,0.9505,90
+liver,dints_multi_organ,annotation_2,0.94,0.9265,0.9503,90
+liver,dints_multi_organ,annotation_3,0.9277,0.9003,0.9464,90
+liver,swin_unetr_btcv,annotation_1,0.9498,0.9439,0.9549,90
+liver,swin_unetr_btcv,annotation_2,0.9497,0.9438,0.9547,90
+liver,swin_unetr_btcv,annotation_3,0.9385,0.9141,0.9532,90

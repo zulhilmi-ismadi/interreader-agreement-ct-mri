@@ -1,0 +1,15 @@
+case_set,n_cases,quantity,scorer,scoring,value,ci_low,ci_high,top_team,top_team_dsc,top_team_cases,top_team_minus_value,top_team_minus_value_ci_low,top_team_minus_value_ci_high,draws,seed
+all_90,90,pairwise reader agreement,radiologists (3 reader pairs),every voxel,0.9434,0.9282,0.9533,MedIG,0.9457,60,0.0023,-0.0076,0.0175,2000,20260917
+all_90,90,"model, challenge scoring",swin_unetr_btcv,inside the three-reader consensus regions,0.7548,0.7317,0.7771,MedIG,0.9457,60,0.1909,0.1686,0.214,2000,20260917
+all_90,90,"model, challenge scoring",best_model_per_organ,inside the three-reader consensus regions,0.8838,0.8592,0.9035,MedIG,0.9457,60,0.0619,0.0422,0.0865,2000,20260917
+all_90,90,"radiologist against the other two, challenge-style scoring",annotation_1,inside the consensus regions of the other two readers,0.9561,0.9386,0.9665,MedIG,0.9457,60,-0.0104,-0.0208,0.0071,2000,20260917
+all_90,90,"radiologist against the other two, challenge-style scoring",annotation_2,inside the consensus regions of the other two readers,0.9673,0.9498,0.9779,MedIG,0.9457,60,-0.0216,-0.0322,-0.0041,2000,20260917
+all_90,90,"radiologist against the other two, challenge-style scoring",annotation_3,inside the consensus regions of the other two readers,0.9687,0.9454,0.9822,MedIG,0.9457,60,-0.023,-0.0365,0.0003,2000,20260917
+all_90,90,"radiologist against the other two, challenge-style scoring",mean_of_three,inside the consensus regions of the other two readers,0.964,0.9454,0.9748,MedIG,0.9457,60,-0.0183,-0.0291,0.0003,2000,20260917
+testing_split_65,65,pairwise reader agreement,radiologists (3 reader pairs),every voxel,0.9415,0.9189,0.9551,MedIG,0.9457,60,0.0042,-0.0094,0.0268,2000,20260917
+testing_split_65,65,"model, challenge scoring",swin_unetr_btcv,inside the three-reader consensus regions,0.7384,0.7072,0.767,MedIG,0.9457,60,0.2073,0.1787,0.2385,2000,20260917
+testing_split_65,65,"model, challenge scoring",best_model_per_organ,inside the three-reader consensus regions,0.8687,0.8358,0.8948,MedIG,0.9457,60,0.077,0.0509,0.1099,2000,20260917
+testing_split_65,65,"radiologist against the other two, challenge-style scoring",annotation_1,inside the consensus regions of the other two readers,0.9563,0.9322,0.9701,MedIG,0.9457,60,-0.0106,-0.0244,0.0135,2000,20260917
+testing_split_65,65,"radiologist against the other two, challenge-style scoring",annotation_2,inside the consensus regions of the other two readers,0.9621,0.9368,0.977,MedIG,0.9457,60,-0.0164,-0.0313,0.0089,2000,20260917
+testing_split_65,65,"radiologist against the other two, challenge-style scoring",annotation_3,inside the consensus regions of the other two readers,0.9641,0.9316,0.9826,MedIG,0.9457,60,-0.0184,-0.0369,0.0141,2000,20260917
+testing_split_65,65,"radiologist against the other two, challenge-style scoring",mean_of_three,inside the consensus regions of the other two readers,0.9608,0.9343,0.9757,MedIG,0.9457,60,-0.0151,-0.03,0.0114,2000,20260917

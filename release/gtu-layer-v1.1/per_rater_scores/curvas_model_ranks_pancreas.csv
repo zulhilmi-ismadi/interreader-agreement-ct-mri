@@ -1,0 +1,10 @@
+dataset,task,reference_rater,model,mean_score,rank
+curvas,pancreas,annotation_1,dints_pancreas,0.7918033333333333,1
+curvas,pancreas,annotation_1,dints_multi_organ,0.7434855555555556,2
+curvas,pancreas,annotation_1,swin_unetr_btcv,0.4255411111111111,3
+curvas,pancreas,annotation_2,dints_pancreas,0.7810455555555555,1
+curvas,pancreas,annotation_2,dints_multi_organ,0.7369811111111111,2
+curvas,pancreas,annotation_2,swin_unetr_btcv,0.4121622222222222,3
+curvas,pancreas,annotation_3,dints_pancreas,0.7744777777777778,1
+curvas,pancreas,annotation_3,dints_multi_organ,0.7317788888888889,2
+curvas,pancreas,annotation_3,swin_unetr_btcv,0.4130677777777777,3

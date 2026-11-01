@@ -1,0 +1,19 @@
+dataset	licence	licence_category	licence_source_of_record	task_level_rows_released	per_image_rows_released	withheld_reason
+arvaniti	CC0-1.0	permits	Harvard Dataverse doi:10.7910/DVN/OCYCMP	yes	yes	
+c3ro	CC-BY-4.0	permits	Figshare (Wahid 2023, Sci Data)	yes	yes	
+chasedb1	CC-BY-4.0	permits	Kingston University dataset record (CHASE_DB1 retinal vessel reference dataset)	yes	yes	
+cryonuseg	MIT	permits	Kaggle ipateam/segmentation-of-nuclei-in-cryosectioned-he-images	yes	yes	
+curvas	CC-BY-4.0	permits	Zenodo (CURVAS 2024 challenge release)	yes	yes	
+cytocrowd	unstated	unstated	github.com/YHSI5358/CytoCrowd-Datasets — no LICENSE file	yes	no	licence not stated; per-image rows not shared until it is confirmed
+gleason2019	unstated	unstated	gleason2019.grand-challenge.org — citation request only	yes	no	licence not stated; per-image rows not shared until it is confirmed
+ima	CC-BY-NC-ND-4.0	restrictive	Zenodo doi:10.5281/zenodo.14201692 + ISIC Archive Terms	yes	no	the licence's NoDerivatives term does not permit derived per-image rows to be redistributed
+lidc	CC-BY-3.0	permits	Kohl 2018 LIDC crops, GCS bucket	yes	yes	
+liverhccseg	CC-BY-4.0	permits	Zenodo doi:10.5281/zenodo.7957516	yes	yes	
+mesmer	unstated	unstated	publications-data GCS bundle — no licence file in the archive	yes	no	licence not stated; per-image rows not shared until it is confirmed
+msseg2016	LicenseRef-OFSEP-MSSEG2016-DUA	restrictive	OFSEP data access agreement, March 2021 (Shanoir)	yes	no	data use agreement permits group-level results only; per-image and per-reader rows not shared, task-level rows released
+multiorg	CC-BY-NC-SA-4.0	permits	Kaggle (Bukas 2024)	yes	yes	
+nucls	CC0-1.0	permits	github.com/PathologyDataScience/NuCLS	yes	yes	
+pdacvi	CC-BY-4.0	permits	Zenodo (CURVAS-PDACVI dataset)	yes	yes	
+qubiq21	unstated	unstated	qubiq21.grand-challenge.org — participation terms only	yes	no	licence not stated; per-image rows not shared until it is confirmed
+riga	CC-BY-NC-4.0	permits	Deep Blue Data doi:10.7302/Z23R0R29	yes	yes	
+stare	unstated	unstated	cecas.clemson.edu/~ahoover/stare — no terms stated	yes	no	licence not stated; per-image rows not shared until it is confirmed

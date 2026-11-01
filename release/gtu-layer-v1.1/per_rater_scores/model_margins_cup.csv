@@ -1,0 +1,7 @@
+dataset,task,reference_rater,best_model,best_score,runner_up,runner_up_score,margin,rater_pair_dispersion,margin_exceeds_dispersion,margin_sd,margin_over_sd
+riga,cup,r1,segformer_odoc,0.8564,unet_drishti,0.7045,0.1519,0.0786,True,0.00566,26.84
+riga,cup,r2,segformer_odoc,0.8243,unet_drishti,0.7096,0.1147,0.0786,True,0.00556,20.63
+riga,cup,r3,segformer_odoc,0.8148,unet_drishti,0.6855,0.1293,0.0786,True,0.00554,23.34
+riga,cup,r4,segformer_odoc,0.7973,unet_drishti,0.765,0.0324,0.0786,False,0.00619,5.23
+riga,cup,r5,segformer_odoc,0.8113,unet_drishti,0.6519,0.1594,0.0786,True,0.00531,30.02
+riga,cup,r6,segformer_odoc,0.7864,unet_drishti,0.6436,0.1428,0.0786,True,0.00546,26.15

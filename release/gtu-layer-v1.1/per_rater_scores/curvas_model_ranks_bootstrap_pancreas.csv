@@ -1,0 +1,10 @@
+task,model,reference_rater,mean_score,ci_lo,ci_hi,images
+pancreas,dints_multi_organ,annotation_1,0.7435,0.6959,0.7835,90
+pancreas,dints_multi_organ,annotation_2,0.737,0.6896,0.7788,90
+pancreas,dints_multi_organ,annotation_3,0.7318,0.6826,0.7776,90
+pancreas,dints_pancreas,annotation_1,0.7918,0.7615,0.8188,90
+pancreas,dints_pancreas,annotation_2,0.781,0.749,0.8095,90
+pancreas,dints_pancreas,annotation_3,0.7745,0.7384,0.808,90
+pancreas,swin_unetr_btcv,annotation_1,0.4255,0.3834,0.4699,90
+pancreas,swin_unetr_btcv,annotation_2,0.4122,0.3714,0.4561,90
+pancreas,swin_unetr_btcv,annotation_3,0.4131,0.372,0.4567,90

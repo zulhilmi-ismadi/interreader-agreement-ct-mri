@@ -1,0 +1,544 @@
+{
+  "release": "per-rater model scores, v1.1",
+  "what_ships": "scores only - no predicted masks, no images",
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 20260917,
+    "note": "cases resampled, paired across models; the seed and draw count behind every interval in these tables"
+  },
+  "medsam_prompt_rule": "A square box covering 18% of the frame, centred on the brightest region of the green channel - the usual optic-nerve-head cue in a fundus photograph. Set by a fixed rule and applied identically to every image; no reader mask is read.",
+  "models": [
+    {
+      "model": "dints_multi_organ",
+      "repo": "MONAI/multi_organ_segmentation",
+      "revision": "195b442a8c8e8f9ec0e8f5c06bf9e192ebcde6ad",
+      "device": "cuda",
+      "note": "DiNTS trained at Aichi Cancer Center; eight abdominal structures, no kidney class",
+      "recipe": {
+        "config_file": "inference.yaml",
+        "axcodes": "RAS",
+        "pixdim": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "a_min": -500.0,
+        "a_max": 500.0,
+        "roi_size": [
+          96,
+          96,
+          96
+        ],
+        "overlap": 0.625,
+        "sw_batch_size": 4,
+        "output_classes": 8
+      },
+      "constructor_args_dropped": [],
+      "inversion": "separable 1-D interpolation for Spacingd with scale and offset read from the affines, nibabel ornt_transform for Orientationd; argmax at full resolution after interpolation; agrees with MONAI Invertd on 100% of voxels on four test geometries",
+      "cases_by_split": {
+        "testing_set": 65,
+        "training_set": 20,
+        "validation_set": 5
+      },
+      "case_splits": {
+        "UKCHLL001": "training_set",
+        "UKCHLL002": "training_set",
+        "UKCHLL009": "training_set",
+        "UKCHLL011": "training_set",
+        "UKCHLL015": "training_set",
+        "UKCHLL017": "training_set",
+        "UKCHLL021": "training_set",
+        "UKCHLL023": "training_set",
+        "UKCHLL031": "training_set",
+        "UKCHLL034": "training_set",
+        "UKCHLL035": "training_set",
+        "UKCHLL037": "training_set",
+        "UKCHLL038": "training_set",
+        "UKCHLL039": "training_set",
+        "UKCHLL041": "training_set",
+        "UKCHLL042": "training_set",
+        "UKCHLL043": "training_set",
+        "UKCHLL045": "training_set",
+        "UKCHLL046": "training_set",
+        "UKCHLL048": "training_set",
+        "UKCHLL049": "validation_set",
+        "UKCHLL051": "validation_set",
+        "UKCHLL058": "validation_set",
+        "UKCHLL059": "validation_set",
+        "UKCHLL061": "validation_set",
+        "UKCHLL003": "testing_set",
+        "UKCHLL005": "testing_set",
+        "UKCHLL007": "testing_set",
+        "UKCHLL008": "testing_set",
+        "UKCHLL010": "testing_set",
+        "UKCHLL013": "testing_set",
+        "UKCHLL018": "testing_set",
+        "UKCHLL020": "testing_set",
+        "UKCHLL025": "testing_set",
+        "UKCHLL026": "testing_set",
+        "UKCHLL027": "testing_set",
+        "UKCHLL028": "testing_set",
+        "UKCHLL030": "testing_set",
+        "UKCHLL032": "testing_set",
+        "UKCHLL052": "testing_set",
+        "UKCHLL053": "testing_set",
+        "UKCHLL054": "testing_set",
+        "UKCHLL055": "testing_set",
+        "UKCHLL057": "testing_set",
+        "UKCHLL062": "testing_set",
+        "UKCHLL064": "testing_set",
+        "UKCHLL066": "testing_set",
+        "UKCHLL067": "testing_set",
+        "UKCHLL069": "testing_set",
+        "UKCHLL070": "testing_set",
+        "UKCHLL071": "testing_set",
+        "UKCHLL073": "testing_set",
+        "UKCHLL075": "testing_set",
+        "UKCHLL076": "testing_set",
+        "UKCHLL077": "testing_set",
+        "UKCHLL078": "testing_set",
+        "UKCHLL080": "testing_set",
+        "UKCHLL081": "testing_set",
+        "UKCHLL082": "testing_set",
+        "UKCHLL083": "testing_set",
+        "UKCHLL084": "testing_set",
+        "UKCHLL086": "testing_set",
+        "UKCHLL087": "testing_set",
+        "UKCHLL089": "testing_set",
+        "UKCHLL090": "testing_set",
+        "UKCHLL091": "testing_set",
+        "UKCHLL092": "testing_set",
+        "UKCHLL093": "testing_set",
+        "UKCHLL094": "testing_set",
+        "UKCHLL095": "testing_set",
+        "UKCHLL096": "testing_set",
+        "UKCHLL097": "testing_set",
+        "UKCHLL098": "testing_set",
+        "UKCHLL099": "testing_set",
+        "UKCHLL100": "testing_set",
+        "UKCHLL101": "testing_set",
+        "UKCHLL102": "testing_set",
+        "UKCHLL103": "testing_set",
+        "UKCHLL104": "testing_set",
+        "UKCHLL105": "testing_set",
+        "UKCHLL106": "testing_set",
+        "UKCHLL107": "testing_set",
+        "UKCHLL108": "testing_set",
+        "UKCHLL109": "testing_set",
+        "UKCHLL110": "testing_set",
+        "UKCHLL111": "testing_set",
+        "UKCHLL112": "testing_set",
+        "UKCHLL113": "testing_set",
+        "UKCHLL114": "testing_set",
+        "UKCHLL115": "testing_set"
+      },
+      "tasks": {
+        "liver": {
+          "channels_used": [
+            3
+          ],
+          "cases": 90,
+          "run_date": "2026-10-20",
+          "cases_kept_from_an_earlier_run": 0
+        },
+        "pancreas": {
+          "channels_used": [
+            7
+          ],
+          "cases": 90,
+          "run_date": "2026-10-20",
+          "cases_kept_from_an_earlier_run": 0
+        }
+      },
+      "status": "included",
+      "bundle_version": "0.0.6",
+      "monai_version": "1.3.0",
+      "input_orientation": "LPS affine applied to the 89 images without orientation codes; outputs mapped back to the original grid",
+      "predictions_folder": "results/per_rater/predictions_curvas_lps"
+    },
+    {
+      "model": "dints_pancreas",
+      "repo": "MONAI/pancreas_ct_dints_segmentation",
+      "revision": "1b4b04a0de2cf6236860891bf1c2e9494e1afaf7",
+      "device": "cuda",
+      "note": "DiNTS trained on Medical Segmentation Decathlon Task07; pancreas and its tumour",
+      "recipe": {
+        "config_file": "inference.yaml",
+        "axcodes": "RAS",
+        "pixdim": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "a_min": -87.0,
+        "a_max": 199.0,
+        "roi_size": [
+          96,
+          96,
+          96
+        ],
+        "overlap": 0.625,
+        "sw_batch_size": 4,
+        "output_classes": 3
+      },
+      "constructor_args_dropped": [],
+      "inversion": "separable 1-D interpolation for Spacingd with scale and offset read from the affines, nibabel ornt_transform for Orientationd; argmax at full resolution after interpolation; agrees with MONAI Invertd on 100% of voxels on four test geometries",
+      "cases_by_split": {
+        "testing_set": 65,
+        "training_set": 20,
+        "validation_set": 5
+      },
+      "case_splits": {
+        "UKCHLL001": "training_set",
+        "UKCHLL002": "training_set",
+        "UKCHLL009": "training_set",
+        "UKCHLL011": "training_set",
+        "UKCHLL015": "training_set",
+        "UKCHLL017": "training_set",
+        "UKCHLL021": "training_set",
+        "UKCHLL023": "training_set",
+        "UKCHLL031": "training_set",
+        "UKCHLL034": "training_set",
+        "UKCHLL035": "training_set",
+        "UKCHLL037": "training_set",
+        "UKCHLL038": "training_set",
+        "UKCHLL039": "training_set",
+        "UKCHLL041": "training_set",
+        "UKCHLL042": "training_set",
+        "UKCHLL043": "training_set",
+        "UKCHLL045": "training_set",
+        "UKCHLL046": "training_set",
+        "UKCHLL048": "training_set",
+        "UKCHLL049": "validation_set",
+        "UKCHLL051": "validation_set",
+        "UKCHLL058": "validation_set",
+        "UKCHLL059": "validation_set",
+        "UKCHLL061": "validation_set",
+        "UKCHLL003": "testing_set",
+        "UKCHLL005": "testing_set",
+        "UKCHLL007": "testing_set",
+        "UKCHLL008": "testing_set",
+        "UKCHLL010": "testing_set",
+        "UKCHLL013": "testing_set",
+        "UKCHLL018": "testing_set",
+        "UKCHLL020": "testing_set",
+        "UKCHLL025": "testing_set",
+        "UKCHLL026": "testing_set",
+        "UKCHLL027": "testing_set",
+        "UKCHLL028": "testing_set",
+        "UKCHLL030": "testing_set",
+        "UKCHLL032": "testing_set",
+        "UKCHLL052": "testing_set",
+        "UKCHLL053": "testing_set",
+        "UKCHLL054": "testing_set",
+        "UKCHLL055": "testing_set",
+        "UKCHLL057": "testing_set",
+        "UKCHLL062": "testing_set",
+        "UKCHLL064": "testing_set",
+        "UKCHLL066": "testing_set",
+        "UKCHLL067": "testing_set",
+        "UKCHLL069": "testing_set",
+        "UKCHLL070": "testing_set",
+        "UKCHLL071": "testing_set",
+        "UKCHLL073": "testing_set",
+        "UKCHLL075": "testing_set",
+        "UKCHLL076": "testing_set",
+        "UKCHLL077": "testing_set",
+        "UKCHLL078": "testing_set",
+        "UKCHLL080": "testing_set",
+        "UKCHLL081": "testing_set",
+        "UKCHLL082": "testing_set",
+        "UKCHLL083": "testing_set",
+        "UKCHLL084": "testing_set",
+        "UKCHLL086": "testing_set",
+        "UKCHLL087": "testing_set",
+        "UKCHLL089": "testing_set",
+        "UKCHLL090": "testing_set",
+        "UKCHLL091": "testing_set",
+        "UKCHLL092": "testing_set",
+        "UKCHLL093": "testing_set",
+        "UKCHLL094": "testing_set",
+        "UKCHLL095": "testing_set",
+        "UKCHLL096": "testing_set",
+        "UKCHLL097": "testing_set",
+        "UKCHLL098": "testing_set",
+        "UKCHLL099": "testing_set",
+        "UKCHLL100": "testing_set",
+        "UKCHLL101": "testing_set",
+        "UKCHLL102": "testing_set",
+        "UKCHLL103": "testing_set",
+        "UKCHLL104": "testing_set",
+        "UKCHLL105": "testing_set",
+        "UKCHLL106": "testing_set",
+        "UKCHLL107": "testing_set",
+        "UKCHLL108": "testing_set",
+        "UKCHLL109": "testing_set",
+        "UKCHLL110": "testing_set",
+        "UKCHLL111": "testing_set",
+        "UKCHLL112": "testing_set",
+        "UKCHLL113": "testing_set",
+        "UKCHLL114": "testing_set",
+        "UKCHLL115": "testing_set"
+      },
+      "tasks": {
+        "pancreas": {
+          "channels_used": [
+            1
+          ],
+          "cases": 90,
+          "run_date": "2026-10-20",
+          "cases_kept_from_an_earlier_run": 0
+        }
+      },
+      "status": "included",
+      "bundle_version": "0.5.2",
+      "monai_version": "1.4.0",
+      "input_orientation": "LPS affine applied to the 89 images without orientation codes; outputs mapped back to the original grid",
+      "predictions_folder": "results/per_rater/predictions_curvas_lps"
+    },
+    {
+      "model": "medsam",
+      "repo": "wanglab/medsam-vit-base",
+      "revision": "de8488bca37bb1d4fb190f612c516126d739ce3b",
+      "processor": "wanglab/medsam-vit-base",
+      "device": "cuda",
+      "note": "MedSAM prompted with a fixed box on the brightest region of the green channel; different family, weaker baseline",
+      "tasks": {
+        "disc": {
+          "labels_used": [
+            1
+          ],
+          "images": 749,
+          "run_date": "2026-09-17"
+        },
+        "cup": {
+          "labels_used": [
+            1
+          ],
+          "images": 749,
+          "run_date": "2026-09-17"
+        }
+      },
+      "status": "included"
+    },
+    {
+      "model": "segformer_odoc",
+      "repo": "pamixsun/segformer_for_optic_disc_cup_segmentation",
+      "revision": "a0463fb6c2bf184cf398e5fd82a8194e01e66e7f",
+      "processor": "pamixsun/segformer_for_optic_disc_cup_segmentation",
+      "device": "cuda",
+      "note": "SegFormer trained for optic disc and cup segmentation on fundus photographs",
+      "tasks": {
+        "disc": {
+          "labels_used": [
+            1,
+            2
+          ],
+          "images": 749,
+          "run_date": "2026-09-17"
+        },
+        "cup": {
+          "labels_used": [
+            2
+          ],
+          "images": 749,
+          "run_date": "2026-09-17"
+        }
+      },
+      "status": "included"
+    },
+    {
+      "model": "segformer_refuge",
+      "repo": "SiddharthaM/segformer-refuge-disc-segmentation",
+      "revision": null,
+      "note": "SegFormer trained on REFUGE by a different group from segformer_odoc; disc only",
+      "status": "dropped",
+      "dropped_reason": "segments the fundus field of view, not the optic disc",
+      "excluded_from_scoring": true
+    },
+    {
+      "model": "swin_unetr_btcv",
+      "repo": "MONAI/swin_unetr_btcv_segmentation",
+      "revision": "e3e994c2b1438f84f431162a6b319f2819500c65",
+      "device": "cuda",
+      "note": "Swin UNETR trained on Beyond the Cranial Vault; 13 abdominal structures",
+      "recipe": {
+        "config_file": "inference.json",
+        "axcodes": "RAS",
+        "pixdim": [
+          1.5,
+          1.5,
+          2.0
+        ],
+        "a_min": -175.0,
+        "a_max": 250.0,
+        "roi_size": [
+          96,
+          96,
+          96
+        ],
+        "overlap": 0.5,
+        "sw_batch_size": 4,
+        "output_classes": null
+      },
+      "constructor_args_dropped": [
+        "img_size"
+      ],
+      "inversion": "separable 1-D interpolation for Spacingd with scale and offset read from the affines, nibabel ornt_transform for Orientationd; argmax at full resolution after interpolation; agrees with MONAI Invertd on 100% of voxels on four test geometries",
+      "cases_by_split": {
+        "testing_set": 65,
+        "training_set": 20,
+        "validation_set": 5
+      },
+      "case_splits": {
+        "UKCHLL001": "training_set",
+        "UKCHLL002": "training_set",
+        "UKCHLL009": "training_set",
+        "UKCHLL011": "training_set",
+        "UKCHLL015": "training_set",
+        "UKCHLL017": "training_set",
+        "UKCHLL021": "training_set",
+        "UKCHLL023": "training_set",
+        "UKCHLL031": "training_set",
+        "UKCHLL034": "training_set",
+        "UKCHLL035": "training_set",
+        "UKCHLL037": "training_set",
+        "UKCHLL038": "training_set",
+        "UKCHLL039": "training_set",
+        "UKCHLL041": "training_set",
+        "UKCHLL042": "training_set",
+        "UKCHLL043": "training_set",
+        "UKCHLL045": "training_set",
+        "UKCHLL046": "training_set",
+        "UKCHLL048": "training_set",
+        "UKCHLL049": "validation_set",
+        "UKCHLL051": "validation_set",
+        "UKCHLL058": "validation_set",
+        "UKCHLL059": "validation_set",
+        "UKCHLL061": "validation_set",
+        "UKCHLL003": "testing_set",
+        "UKCHLL005": "testing_set",
+        "UKCHLL007": "testing_set",
+        "UKCHLL008": "testing_set",
+        "UKCHLL010": "testing_set",
+        "UKCHLL013": "testing_set",
+        "UKCHLL018": "testing_set",
+        "UKCHLL020": "testing_set",
+        "UKCHLL025": "testing_set",
+        "UKCHLL026": "testing_set",
+        "UKCHLL027": "testing_set",
+        "UKCHLL028": "testing_set",
+        "UKCHLL030": "testing_set",
+        "UKCHLL032": "testing_set",
+        "UKCHLL052": "testing_set",
+        "UKCHLL053": "testing_set",
+        "UKCHLL054": "testing_set",
+        "UKCHLL055": "testing_set",
+        "UKCHLL057": "testing_set",
+        "UKCHLL062": "testing_set",
+        "UKCHLL064": "testing_set",
+        "UKCHLL066": "testing_set",
+        "UKCHLL067": "testing_set",
+        "UKCHLL069": "testing_set",
+        "UKCHLL070": "testing_set",
+        "UKCHLL071": "testing_set",
+        "UKCHLL073": "testing_set",
+        "UKCHLL075": "testing_set",
+        "UKCHLL076": "testing_set",
+        "UKCHLL077": "testing_set",
+        "UKCHLL078": "testing_set",
+        "UKCHLL080": "testing_set",
+        "UKCHLL081": "testing_set",
+        "UKCHLL082": "testing_set",
+        "UKCHLL083": "testing_set",
+        "UKCHLL084": "testing_set",
+        "UKCHLL086": "testing_set",
+        "UKCHLL087": "testing_set",
+        "UKCHLL089": "testing_set",
+        "UKCHLL090": "testing_set",
+        "UKCHLL091": "testing_set",
+        "UKCHLL092": "testing_set",
+        "UKCHLL093": "testing_set",
+        "UKCHLL094": "testing_set",
+        "UKCHLL095": "testing_set",
+        "UKCHLL096": "testing_set",
+        "UKCHLL097": "testing_set",
+        "UKCHLL098": "testing_set",
+        "UKCHLL099": "testing_set",
+        "UKCHLL100": "testing_set",
+        "UKCHLL101": "testing_set",
+        "UKCHLL102": "testing_set",
+        "UKCHLL103": "testing_set",
+        "UKCHLL104": "testing_set",
+        "UKCHLL105": "testing_set",
+        "UKCHLL106": "testing_set",
+        "UKCHLL107": "testing_set",
+        "UKCHLL108": "testing_set",
+        "UKCHLL109": "testing_set",
+        "UKCHLL110": "testing_set",
+        "UKCHLL111": "testing_set",
+        "UKCHLL112": "testing_set",
+        "UKCHLL113": "testing_set",
+        "UKCHLL114": "testing_set",
+        "UKCHLL115": "testing_set"
+      },
+      "tasks": {
+        "kidney": {
+          "channels_used": [
+            2,
+            3
+          ],
+          "cases": 90,
+          "run_date": "2026-10-19",
+          "cases_kept_from_an_earlier_run": 0
+        },
+        "liver": {
+          "channels_used": [
+            6
+          ],
+          "cases": 90,
+          "run_date": "2026-10-19",
+          "cases_kept_from_an_earlier_run": 0
+        },
+        "pancreas": {
+          "channels_used": [
+            11
+          ],
+          "cases": 90,
+          "run_date": "2026-10-19",
+          "cases_kept_from_an_earlier_run": 0
+        }
+      },
+      "status": "included",
+      "bundle_version": "0.5.8",
+      "monai_version": "1.4.0",
+      "input_orientation": "LPS affine applied to the 89 images without orientation codes; outputs mapped back to the original grid",
+      "predictions_folder": "results/per_rater/predictions_curvas_lps"
+    },
+    {
+      "model": "unet_drishti",
+      "repo": "Yashu13/od-cup-segmentation-glaucoma-detection",
+      "revision": "b25f7e5a0520421080e353bdbe2df555013ac321",
+      "processor": "Yashu13/od-cup-segmentation-glaucoma-detection",
+      "device": "cuda",
+      "note": "ResNet34 U-Net trained on Drishti-GS; separate disc and cup weight files",
+      "tasks": {
+        "disc": {
+          "labels_used": [
+            1
+          ],
+          "images": 749,
+          "run_date": "2026-09-17"
+        },
+        "cup": {
+          "labels_used": [
+            1
+          ],
+          "images": 749,
+          "run_date": "2026-09-17"
+        }
+      },
+      "status": "included"
+    }
+  ]
+}

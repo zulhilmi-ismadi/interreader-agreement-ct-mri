@@ -1,0 +1,4 @@
+dataset,task,reference_rater,model,mean_score,rank
+curvas,kidney,annotation_1,swin_unetr_btcv,0.85642,1
+curvas,kidney,annotation_2,swin_unetr_btcv,0.8459955555555556,1
+curvas,kidney,annotation_3,swin_unetr_btcv,0.8393111111111111,1
