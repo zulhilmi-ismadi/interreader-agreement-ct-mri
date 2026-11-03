@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this code or the derived tables, please cite the article."
 title: "Interreader agreement and scoring in public CT and MRI segmentation datasets: code and derived results"
-version: "1.1"
+version: "1.2"
 license: MIT
 authors:
   - family-names: Ismadi
@@ -21,7 +21,7 @@ authors:
     orcid: "https://orcid.org/0009-0006-6724-4888"
 preferred-citation:
   type: article
-  title: "Judging Segmentation AI against Radiologists: Interreader Agreement and Scoring in Public CT and MRI Datasets"
+  title: "Interreader Agreement in Public CT and MRI Segmentation Datasets: The Comparator for Judging AI against Radiologists"
   authors:
     - family-names: Ismadi
       given-names: Mohd-Zulhilmi

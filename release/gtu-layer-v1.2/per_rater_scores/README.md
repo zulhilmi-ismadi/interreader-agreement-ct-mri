@@ -1,4 +1,4 @@
-# Per-reader model scores, v1.1
+# Per-reader model scores, v1.2
 
 What three off-the-shelf segmentation models score on **every case against every individual reference
 reader**, rather than against a consensus or a panel average. These are the tables behind the paper's

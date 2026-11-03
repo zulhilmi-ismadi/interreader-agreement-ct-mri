@@ -6,7 +6,7 @@ cryonuseg	MIT	permits	Kaggle ipateam/segmentation-of-nuclei-in-cryosectioned-he-
 curvas	CC-BY-4.0	permits	Zenodo (CURVAS 2024 challenge release)	yes	yes	
 cytocrowd	unstated	unstated	github.com/YHSI5358/CytoCrowd-Datasets — no LICENSE file	yes	no	licence not stated; per-image rows not shared until it is confirmed
 gleason2019	unstated	unstated	gleason2019.grand-challenge.org — citation request only	yes	no	licence not stated; per-image rows not shared until it is confirmed
-ima	CC-BY-NC-ND-4.0	restrictive	Zenodo doi:10.5281/zenodo.14201692 + ISIC Archive Terms	yes	no	the licence's NoDerivatives term does not permit derived per-image rows to be redistributed
+ima	CC-BY-NC-ND-4.0	restrictive	Zenodo doi:10.5281/zenodo.14201692 + ISIC Archive Terms; per-image rows released by written permission of the dataset authors (K. Abhishek and G. Hamarneh, Simon Fraser University), 3 November 2026, to release derived statistics with explicit attribution	yes	yes	
 lidc	CC-BY-3.0	permits	Kohl 2018 LIDC crops, GCS bucket	yes	yes	
 liverhccseg	CC-BY-4.0	permits	Zenodo doi:10.5281/zenodo.7957516	yes	yes	
 mesmer	unstated	unstated	publications-data GCS bundle — no licence file in the archive	yes	no	licence not stated; per-image rows not shared until it is confirmed

@@ -1,4 +1,4 @@
-# The GTU layer, v1.1
+# The GTU layer, v1.2
 
 Agreement between readers for public biomedical image segmentation datasets, measured from each reader's
 released outlines, with the same definitions applied to every source.
@@ -124,14 +124,13 @@ images that orientation.
 **No images and no masks.** This release contains derived statistics only. Every row is keyed by the original
 dataset's identifier; obtain the underlying data from the original source under its own licence.
 
-**Task-level rows of all 18 sources are released; per-image and per-reader rows of 11.** The
-per-image and per-reader rows of 7 sources are withheld because their licences are unstated, forbid
+**Task-level rows of all 18 sources are released; per-image and per-reader rows of 12.** The
+per-image and per-reader rows of 6 sources are withheld because their licences are unstated, forbid
 derivatives or permit group-level derivatives only (see `licences.tsv`). They are withheld on licensing grounds,
 not quality:
 
 - **cytocrowd**: licence not stated; per-image rows not shared until it is confirmed
 - **gleason2019**: licence not stated; per-image rows not shared until it is confirmed
-- **ima**: the licence's NoDerivatives term does not permit derived per-image rows to be redistributed
 - **mesmer**: licence not stated; per-image rows not shared until it is confirmed
 - **msseg2016**: data use agreement permits group-level results only; per-image and per-reader rows not shared, task-level rows released
 - **qubiq21**: licence not stated; per-image rows not shared until it is confirmed
@@ -142,15 +141,16 @@ per-image rows ship in the next version.
 
 **Two levels of release, and what governs each.** The code is MIT licensed. The data rows are of two kinds.
 *Task-level* rows carry one number per task, measure and reader group: these are summary facts about published
-data, reported in the article itself, and they are released for every source. *Per-image* rows carry one value
-per image and reader pair, stand closest to the annotations themselves, and are released only for the sources
-whose licence explicitly permits redistribution of derived statistics; `licences.tsv` records which, with the
-licence read and where it was read. We assert no licence of our own over the task-level rows beyond attribution
-(CC BY 4.0), and we do not relicense anything that came from a source: where a source's licence restricts use, it
-continues to govern what you may do with anything derived from it. In particular the per-image rows of RIGA
-(CC BY-NC 4.0) and MultiOrg (CC BY-NC-SA 4.0) may not be used commercially, and MultiOrg's share-alike term
-requires that anything you build from its rows is released under the same terms. If a use depends on the licence,
-check `licences.tsv` and the original source rather than this summary.
+data, reported in the article itself, and they are released for every source. *Per-image* rows carry one value per
+image and reader pair, stand closest to the annotations themselves, and are released only for the sources whose
+licence explicitly permits redistribution of derived statistics, or whose authors have given written permission;
+`licences.tsv` records which, with the licence read and where it was read. We assert no licence of our own over
+the task-level rows beyond attribution (CC BY 4.0), and we do not relicense anything that came from a source:
+where a source's licence restricts use, it continues to govern what you may do with anything derived from it. In
+particular the per-image rows of IMA++ (CC BY-NC-ND 4.0), RIGA (CC BY-NC 4.0) and MultiOrg (CC BY-NC-SA 4.0) may
+not be used commercially, and MultiOrg's share-alike term requires that anything you build from its rows is
+released under the same terms. If a use depends on the licence, check `licences.tsv` and the original source
+rather than this summary.
 
 ## Files
 
@@ -200,5 +200,21 @@ The paper, plus **every source you actually use**: cite each source's own public
 `licences.tsv` records the licence of each source and where it was read, which is where to check whether a
 source attaches conditions to reuse; it does not restate the citation each source prefers.
 
-Version 1.1. Adding sources without changing any measure, aggregation or spread definition gives v1.x; a
+**IMA++.** Its per-image and per-reader rows are released with the written permission of the dataset's authors,
+on the condition of clear and explicit attribution to their work. If you use them, cite the dataset and the papers
+its authors ask for:
+
+- Abhishek K, Kawahara J, Hamarneh G. IMA++: ISIC Archive Multi-Annotator Dermoscopic Skin Lesion Segmentation
+  Dataset, v1.1. Zenodo 2024. doi:10.5281/zenodo.14201692
+- Abhishek K, Kawahara J, Hamarneh G. IMA++: ISIC Archive Multi-Annotator Dermoscopic Skin Lesion Segmentation
+  Dataset. arXiv [preprint] 2025. doi:10.48550/arXiv.2512.21472
+- Abhishek K, Kawahara J, Hamarneh G. What can we learn from inter-annotator variability in skin lesion
+  segmentation? ISIC Skin Image Analysis Workshop, MICCAI 2025. Lect Notes Comput Sci 2025;16149:23–33.
+  doi:10.1007/978-3-032-05825-6_3
+- Abhishek K, Kawahara J, Hamarneh G. Segmentation style discovery: application to skin lesion images. ISIC Skin
+  Image Analysis Workshop, MICCAI 2024. Lect Notes Comput Sci 2025;15274:24–34. doi:10.1007/978-3-031-77610-6_3
+
+The IMA++ images and masks are not included. Obtain them from the IMA++ record under its own terms.
+
+Version 1.2. Adding sources without changing any measure, aggregation or spread definition gives v1.x; a
 change to any of those definitions gives v2.

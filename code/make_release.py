@@ -2,7 +2,7 @@
 
     python code/make_release.py
 
-Assembles `release/gtu-layer-v1.1/`:
+Assembles `release/gtu-layer-v1.2/`:
 
   task_floor.csv            the layer, per (dataset, task, pair class, metric), for every source
   consensus_comparator.csv  each rater against a consensus of the others, beside the pairwise floor (3+ raters)
@@ -24,7 +24,8 @@ What the release enforces:
     `image_id`, so a user joins against data they obtain from the source themselves.
   * **Task-level rows of every source are released** as facts about the published data; **per-image and
     per-rater rows are withheld** for sources whose licence is unstated, forbids derivatives, or is a data use
-    agreement that permits group-level derivatives only.
+    agreement that permits group-level derivatives only, unless the source's authors have given written
+    permission (`PERMISSIONS`).
   * v1.x is the present set of definitions. Adding sources or derived tables without changing a metric,
     aggregation or spread definition is v1.x; changing one of those definitions is v2.
   * **The per-rater score tables ship** (`per_rater_scores/`). Few benchmark releases publish each model's
@@ -41,7 +42,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parent.parent
 LAYER = ROOT / "results" / "layer"
 RESULTS = ROOT / "results"
-RELEASE = ROOT / "release" / "gtu-layer-v1.1"
+RELEASE = ROOT / "release" / "gtu-layer-v1.2"
 PER_RATER = RESULTS / "per_rater"
 PER_RATER_RELEASE = RELEASE / "per_rater_scores"
 #: The CURVAS predictions behind every released CURVAS model score: the run on correctly oriented input.
@@ -59,7 +60,7 @@ PUBLISHED_RELEASE = RELEASE / "published_values"
 #: version strings are read from it; no weights ship.
 MODEL_CACHE = ROOT / ".model-cache"
 
-VERSION = "1.1"
+VERSION = "1.2"
 
 #: The per-rater experiment's bootstrap, set in `per_rater_models.py` and restated here so a reader of
 #: the released tables need not open the code to learn how an interval was drawn.
@@ -107,6 +108,13 @@ SOURCE_OF_RECORD = {
     "stare": ("unstated", "cecas.clemson.edu/~ahoover/stare — no terms stated"),
 }
 
+#: Sources whose authors have given written permission to release derived per-image rows that the licence alone
+#: does not allow. The licence is unchanged and still governs any use of the rows.
+PERMISSIONS = {
+    "ima": ("written permission of the dataset authors (K. Abhishek and G. Hamarneh, Simon Fraser University), "
+            "3 November 2026, to release derived statistics with explicit attribution"),
+}
+
 #: internal column labels replaced by descriptive names in the released comparator table
 COMPARATOR_RENAME = {"n_images_view_b": "n_images_consensus"}
 COMPARATOR_PARTS = [("view_a_", "pairwise_"), ("view_b_", "consensus_")]
@@ -121,7 +129,9 @@ def data_use_agreement(licence: str) -> bool:
     return "-DUA" in licence.upper()
 
 
-def per_image_released(licence: str) -> bool:
+def per_image_released(dataset: str, licence: str) -> bool:
+    if dataset in PERMISSIONS:
+        return True
     if licence == "unstated" or data_use_agreement(licence):
         return False
     # a confirmed NoDerivatives licence still forbids redistributing derived per-image rows
@@ -143,7 +153,9 @@ def build_licences(datasets: list[str]) -> pd.DataFrame:
     rows = []
     for dataset in sorted(datasets):
         licence, where = SOURCE_OF_RECORD.get(dataset, ("unstated", "not recorded"))
-        ships = per_image_released(licence)
+        ships = per_image_released(dataset, licence)
+        if dataset in PERMISSIONS:
+            where = f"{where}; per-image rows released by {PERMISSIONS[dataset]}"
         reason = ""
         if not ships:
             if data_use_agreement(licence):
@@ -652,15 +664,16 @@ per-image rows ship in the next version.
 
 **Two levels of release, and what governs each.** The code is MIT licensed. The data rows are of two kinds.
 *Task-level* rows carry one number per task, measure and reader group: these are summary facts about published
-data, reported in the article itself, and they are released for every source. *Per-image* rows carry one value
-per image and reader pair, stand closest to the annotations themselves, and are released only for the sources
-whose licence explicitly permits redistribution of derived statistics; `licences.tsv` records which, with the
-licence read and where it was read. We assert no licence of our own over the task-level rows beyond attribution
-(CC BY 4.0), and we do not relicense anything that came from a source: where a source's licence restricts use, it
-continues to govern what you may do with anything derived from it. In particular the per-image rows of RIGA
-(CC BY-NC 4.0) and MultiOrg (CC BY-NC-SA 4.0) may not be used commercially, and MultiOrg's share-alike term
-requires that anything you build from its rows is released under the same terms. If a use depends on the licence,
-check `licences.tsv` and the original source rather than this summary.
+data, reported in the article itself, and they are released for every source. *Per-image* rows carry one value per
+image and reader pair, stand closest to the annotations themselves, and are released only for the sources whose
+licence explicitly permits redistribution of derived statistics, or whose authors have given written permission;
+`licences.tsv` records which, with the licence read and where it was read. We assert no licence of our own over
+the task-level rows beyond attribution (CC BY 4.0), and we do not relicense anything that came from a source:
+where a source's licence restricts use, it continues to govern what you may do with anything derived from it. In
+particular the per-image rows of IMA++ (CC BY-NC-ND 4.0), RIGA (CC BY-NC 4.0) and MultiOrg (CC BY-NC-SA 4.0) may
+not be used commercially, and MultiOrg's share-alike term requires that anything you build from its rows is
+released under the same terms. If a use depends on the licence, check `licences.tsv` and the original source
+rather than this summary.
 
 ## Files
 
@@ -709,6 +722,22 @@ README explains the tables and how the intervals were drawn.
 The paper, plus **every source you actually use**: cite each source's own publication, as that source asks.
 `licences.tsv` records the licence of each source and where it was read, which is where to check whether a
 source attaches conditions to reuse; it does not restate the citation each source prefers.
+
+**IMA++.** Its per-image and per-reader rows are released with the written permission of the dataset's authors,
+on the condition of clear and explicit attribution to their work. If you use them, cite the dataset and the papers
+its authors ask for:
+
+- Abhishek K, Kawahara J, Hamarneh G. IMA++: ISIC Archive Multi-Annotator Dermoscopic Skin Lesion Segmentation
+  Dataset, v1.1. Zenodo 2024. doi:10.5281/zenodo.14201692
+- Abhishek K, Kawahara J, Hamarneh G. IMA++: ISIC Archive Multi-Annotator Dermoscopic Skin Lesion Segmentation
+  Dataset. arXiv [preprint] 2025. doi:10.48550/arXiv.2512.21472
+- Abhishek K, Kawahara J, Hamarneh G. What can we learn from inter-annotator variability in skin lesion
+  segmentation? ISIC Skin Image Analysis Workshop, MICCAI 2025. Lect Notes Comput Sci 2025;16149:23–33.
+  doi:10.1007/978-3-032-05825-6_3
+- Abhishek K, Kawahara J, Hamarneh G. Segmentation style discovery: application to skin lesion images. ISIC Skin
+  Image Analysis Workshop, MICCAI 2024. Lect Notes Comput Sci 2025;15274:24–34. doi:10.1007/978-3-031-77610-6_3
+
+The IMA++ images and masks are not included. Obtain them from the IMA++ record under its own terms.
 
 Version {version}. Adding sources without changing any measure, aggregation or spread definition gives v1.x; a
 change to any of those definitions gives v2.

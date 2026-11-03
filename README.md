@@ -1,7 +1,7 @@
 # Interreader agreement and scoring in public CT and MRI segmentation datasets
 
-Code and derived results for the article "Judging Segmentation AI against Radiologists: Interreader Agreement
-and Scoring in Public CT and MRI Datasets" (release v1.1).
+Code and derived results for the article "Interreader Agreement in Public CT and MRI Segmentation Datasets: The Comparator for Judging AI against Radiologists"
+(release v1.2).
 
 The code measures how closely the readers of public multireader segmentation datasets agree, from each
 reader's released outlines and with one set of definitions for every dataset; checks how each reference was
@@ -9,14 +9,14 @@ built; recomputes published agreement values from the released files; and, on th
 challenge, compares leaderboard gaps and public models with the change produced by using a different
 radiologist as the reference.
 
-No images or outlines are redistributed. The derived tables are in `release/gtu-layer-v1.1/`; start there if
+No images or outlines are redistributed. The derived tables are in `release/gtu-layer-v1.2/`; start there if
 you only need the agreement values.
 
 ## Contents
 
 | Path | What it holds |
 |---|---|
-| `release/gtu-layer-v1.1/` | The derived results: agreement per structure, per image and per reader, the consensus comparator, the published values beside their recomputation, the per-reader model scores, the licence of each source, and the reporting items. See its README |
+| `release/gtu-layer-v1.2/` | The derived results: agreement per structure, per image and per reader, the consensus comparator, the published values beside their recomputation, the per-reader model scores, the licence of each source, and the reporting items. See its README |
 | `code/gtu/` | Data model, mask loading, agreement metrics (Dice, IoU, normalized surface Dice, HD95, instance F1, panoptic quality) and the leave-one-reader-out consensus |
 | `code/loaders/` | One loader per dataset: reads the released files into the common schema and checks their structure |
 | `code/*.py` | The analyses (listed below) |
@@ -39,13 +39,13 @@ python -m pytest code/tests
 
 The model experiment (`per_rater_curvas.py`, `per_rater_infer.py`) needs PyTorch and MONAI and is best run in
 its own environment with a GPU. Model weights are downloaded at the revisions pinned in
-`release/gtu-layer-v1.1/per_rater_scores/models.json`.
+`release/gtu-layer-v1.2/per_rater_scores/models.json`.
 
 ## Data
 
 Download each dataset from its source and place it under `data/gtu-raw/<name>/` (LIDC-IDRI crops under
 `data/LIDC-IDRI-Kohl/`). Each loader's docstring gives the expected layout and the checks it runs. The source of
-record and licence of every dataset are in `release/gtu-layer-v1.1/licences.tsv`; MSSEG-2016 is available
+record and licence of every dataset are in `release/gtu-layer-v1.2/licences.tsv`; MSSEG-2016 is available
 from OFSEP under its data access agreement.
 
 | Name | Dataset | Imaging |

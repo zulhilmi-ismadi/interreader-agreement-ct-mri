@@ -1,5 +1,5 @@
 {
-  "release": "per-rater model scores, v1.1",
+  "release": "per-rater model scores, v1.2",
   "what_ships": "scores only - no predicted masks, no images",
   "bootstrap": {
     "draws": 2000,
